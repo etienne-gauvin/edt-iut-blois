@@ -1,0 +1,178 @@
+{
+  "year": "2013",
+  "week": "8",
+  "group": "7",
+  "relativeWeek": 1,
+  "edt": [
+    {
+      "location": "JJ-A1",
+      "summary": "CM - Communication des organisation",
+      "categories": "CM",
+      "description": "CM - Communication des organisation - COUTY Myriam - JJ-A1",
+      "teacher": "COUTY Myriam",
+      "dtstart": "2013-02-18T07:15:00.000Z",
+      "dtend": "2013-02-18T08:45:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ016",
+      "summary": "TD - Bases du droit",
+      "categories": "TD",
+      "description": "TD - Bases du droit - RECOURSE Franck - JJ016",
+      "teacher": "RECOURSE Franck",
+      "dtstart": "2013-02-18T09:00:00.000Z",
+      "dtend": "2013-02-18T10:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ-A1",
+      "summary": "CM - Bases du droit",
+      "categories": "CM",
+      "description": "CM - Bases du droit - MAUDHUIZON Bernard - JJ-A1",
+      "teacher": "MAUDHUIZON Bernard",
+      "dtstart": "2013-02-18T12:00:00.000Z",
+      "dtend": "2013-02-18T13:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ315",
+      "summary": "TD - Théories info comm",
+      "categories": "TD",
+      "description": "TD - Théories info comm - RICAUD Pascal - JJ315",
+      "teacher": "RICAUD Pascal",
+      "dtstart": "2013-02-18T13:45:00.000Z",
+      "dtend": "2013-02-18T15:15:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ114",
+      "summary": "TP - Conception identité artistique",
+      "categories": "TP",
+      "description": "TP - Conception identité artistique - KUHNEL Jean Pierre - JJ114",
+      "teacher": "KUHNEL Jean Pierre",
+      "dtstart": "2013-02-18T15:30:00.000Z",
+      "dtend": "2013-02-18T18:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJS-103",
+      "summary": "TP - Communication écrite orale",
+      "categories": "TP",
+      "description": "TP - Communication écrite orale - BONTEMPS Laetitia - JJS-103",
+      "teacher": "BONTEMPS Laetitia",
+      "dtstart": "2013-02-19T07:15:00.000Z",
+      "dtend": "2013-02-19T10:15:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ006",
+      "summary": "TD - Communication interpersonnelle",
+      "categories": "TD",
+      "description": "TD - Communication interpersonnelle - COUTY Myriam - JJ006",
+      "teacher": "COUTY Myriam",
+      "dtstart": "2013-02-19T15:30:00.000Z",
+      "dtend": "2013-02-19T17:00:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ008",
+      "summary": "TD - Economie entreprise",
+      "categories": "TD",
+      "description": "TD - Economie entreprise - DOGBEH Jérome - JJ008",
+      "teacher": "DOGBEH Jérome",
+      "dtstart": "2013-02-20T07:15:00.000Z",
+      "dtend": "2013-02-20T08:45:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ014",
+      "summary": "TD - Prod vidéo",
+      "categories": "TD",
+      "description": "TD - Prod vidéo - BETTEMBOURG Jean-Michel - JJ014",
+      "teacher": "BETTEMBOURG Jean-Michel",
+      "dtstart": "2013-02-20T09:00:00.000Z",
+      "dtend": "2013-02-20T10:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ006, JJ008",
+      "summary": "TD - Autre langue",
+      "categories": "TD",
+      "description": "TD - Autre langue - BARON Régina - JJ006, JJ008",
+      "teacher": "BARON Régina",
+      "dtstart": "2013-02-20T12:00:00.000Z",
+      "dtend": "2013-02-20T13:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ110",
+      "summary": "TP - Algorithmique",
+      "categories": "TP",
+      "description": "TP - Algorithmique - SAM Yacine - JJ110",
+      "teacher": "SAM Yacine",
+      "dtstart": "2013-02-20T13:45:00.000Z",
+      "dtend": "2013-02-20T16:45:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ006",
+      "summary": "TD - Bases de données",
+      "categories": "TD",
+      "description": "TD - Bases de données - FRIBURGER Nathalie - JJ006",
+      "teacher": "FRIBURGER Nathalie",
+      "dtstart": "2013-02-21T07:15:00.000Z",
+      "dtend": "2013-02-21T08:45:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ014",
+      "summary": "TP - Communication interpersonnelle",
+      "categories": "TP",
+      "description": "TP - Communication interpersonnelle - DAVISTER Annick - JJ014",
+      "teacher": "DAVISTER Annick",
+      "dtstart": "2013-02-21T12:00:00.000Z",
+      "dtend": "2013-02-21T15:00:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ219-CRL1",
+      "summary": "TD - Anglais",
+      "categories": "TD",
+      "description": "TD - Anglais - MARTINEZ Catherine - JJ219-CRL1",
+      "teacher": "MARTINEZ Catherine",
+      "dtstart": "2013-02-22T07:15:00.000Z",
+      "dtend": "2013-02-22T08:45:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ014",
+      "summary": "TD - Anglais",
+      "categories": "TD",
+      "description": "TD - Anglais - MARTINEZ Catherine - JJ014",
+      "teacher": "MARTINEZ Catherine",
+      "dtstart": "2013-02-22T09:00:00.000Z",
+      "dtend": "2013-02-22T10:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ008",
+      "summary": "TD - Algorithmique",
+      "categories": "TD",
+      "description": "TD - Algorithmique - SAM Yacine - JJ008",
+      "teacher": "SAM Yacine",
+      "dtstart": "2013-02-22T12:00:00.000Z",
+      "dtend": "2013-02-22T13:30:00.000Z",
+      "status": " CONFIRMED"
+    },
+    {
+      "location": "JJ006",
+      "summary": "TD - Administration- Sécurité des r",
+      "categories": "TD",
+      "description": "TD - Administration- Sécurité des r - LASSERRE Julien - JJ006",
+      "teacher": "LASSERRE Julien",
+      "dtstart": "2013-02-22T13:45:00.000Z",
+      "dtend": "2013-02-22T15:15:00.000Z",
+      "status": " CONFIRMED"
+    }
+  ]
+}

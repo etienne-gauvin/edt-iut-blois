@@ -1,0 +1,547 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Mixins LESS ==========================================================
+ *   Author: Etienne Gauvin <etiennegauvin41@gmail.com>
+ *   ========================================================================== */
+
+.transition (@property: all, @duration: 250ms, @timing-function: ease-in-out, @delay: 0ms) {
+    transition-duration: @duration;
+    -moz-transition-duration: @duration;
+    -ms-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    -webkit-ttransition-duration: @duration;
+    
+    transition-property: @property;
+    -moz-transition-property: @property;
+    -ms-transition-property: @property;
+    -o-transition-property: @property;
+    -webkit-transition-property: @property;
+    
+    transition-timing-function: @timing-function;
+    -moz-transition-timing-function: @timing-function;
+    -ms-transition-timing-function: @timing-function;
+    -o-transition-timing-function: @timing-function;
+    -webkit-transition-timing-function: @timing-function;
+    
+    transition-delay: @delay;
+    -moz-transition-delay: @delay;
+    -ms-transition-delay: @delay;
+    -o-transition-delay: @delay;
+    -webkit-transition-delay: @delay;
+}
+
+// Caractéristiques d'un bouton dans le header
+.mixin-header-button {
+    background: lighten(@c0-light, 3%);
+    border: 0;
+    color: white;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    margin: 0 auto 10px;
+    outline: 0;
+    padding: 10px;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: 0 1px 1px @c0-dark;
+    .transition(all, 200ms);
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    background-color: #EDEDED;
+    font: 16px/26px sans-serif;
+}
+
+.wrapper {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 280px; // 320 - 2 * 20px
+//     max-width: 480px;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+}
+
+/* ===================
+    ALL: Couleurs du thème
+   =================== */
+
+@c0-dark:    #666666;
+@c0-light:   #9E9E9E;
+@c1-dark:    #2066AB;
+@c1-light:   #4691DB;
+@c2-dark:    #538235;
+@c2-light:   #79B356;
+@c3-dark:    #8C1620;
+@c3-light:   #C42F39;
+
+body {
+    background-color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.main {
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ============
+ * Header
+ * ============ */
+
+.header-container {
+    background: @c0-light;
+    border-bottom: 20px solid @c0-dark;
+    padding: 20px 20px 10px;
+    
+    h1 {
+        margin: 0 0 20px;
+        color: white;
+        text-align: center;
+        text-shadow: 0 2px 1px @c0-dark;
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/**
+ * Menu
+ */
+
+.nav-container {
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+
+    a, label {
+        background: @c0-light;
+        color: white;
+        display: block;
+        font-weight: bold;
+        margin: 0 auto 10px;
+        padding: 10px;
+        text-align: left;
+        text-decoration: none;
+        text-shadow: 0 1px 1px @c0-dark;
+        
+        [class^="icon-"],
+        [class*=" icon-"] {
+            opacity: 0.6;
+            float: right;
+            font-size: 14px;
+            line-height: 160%;
+            text-shadow: 0 1px 1px @c0-dark;
+        }
+    }
+    
+    a:hover, label:hover {
+        cursor: pointer;
+        background: lighten(@c0-light, 10%);
+        
+        [class^="icon-"],
+        [class*=" icon-"] {
+            text-decoration: none;
+        }
+    }
+    
+    a:focus, :checked + label {
+        outline: 0;
+        
+        [class^="icon-"],
+        [class*=" icon-"] {
+            opacity: 1;
+        }
+    }
+    
+    a:not(:hover):focus, :checked + label:not(:hover) {
+        background: lighten(@c0-light, 3%);
+    }
+    
+    button[type='submit'] {
+        .mixin-header-button;
+        box-shadow: 0 1px 1px @c0-dark;
+        padding: 10px 10px 11px;
+        text-align: center;
+        text-shadow: 0 -1px 1px @c0-dark;
+        width: 100%;
+    }
+    
+    button[type='submit'][disabled] {
+        background: transparent;
+        box-shadow: 0 0 0 transparent;
+        padding: 10px 10px 11px;
+        text-align: center;
+        text-shadow: 0 -1px 1px @c0-dark;
+        width: 100%;
+    }
+    
+    button[type='submit']:not(:disabled):hover,
+    button[type='submit']:not(:disabled):focus {
+        background: lighten(@c0-light, 5%);
+    }
+    
+    button[type='submit']:not(:disabled):active {
+        background: lighten(@c0-dark, 10%);
+        box-shadow: 0 -1px 1px @c0-dark;
+        padding: 11px 10px 10px;
+    }
+}
+
+/* ============
+ * Erreur : pas de Javascript
+ * ============ */
+
+.nojs-container {
+    background: @c3-light;
+    border-bottom: 20px solid @c3-dark;
+    color: white;
+    margin-top: 10px;
+    padding: 20px 20px 10px;
+    text-align: center;
+    
+    h1 {
+        margin: 20px 0;
+        color: white;
+        text-shadow: 0 0 3pt @c3-dark;
+    }
+    
+    a {
+        color: white;
+    }
+}
+
+.week-infos {
+    background: @c0-light;
+    border-bottom: 20px solid @c0-dark;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    
+    p {
+        font-size: 14px;
+        font-variant: italic;
+        font-weight: normal;
+    }
+}
+
+/**
+ * Zone d'affichage de l'emploi du temps.
+ */
+
+ol.edt {
+    list-style: none;
+    padding: 0;
+    
+    > li {
+        
+        h3 {
+            .wrapper;
+            background-color: @c2-light;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            color: white;
+            margin: 0 auto 10px;
+            padding: 10px 20px;
+            text-shadow: 0 2px 1px @c2-dark;
+            border-bottom: 5px solid @c2-dark;
+        }
+        
+        ol {
+            list-style: none;
+            padding: 0;
+            
+            .interlude {
+                color: #888;
+                font-weight: normal;
+                font-style: italic;
+                margin: 0 auto 10px;
+                padding: 0;
+                text-align: center;
+                width: 320px;
+            }
+            
+            .event {
+                background-color: @c1-light;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                color: white;
+                font-weight: bold;
+                margin: 0 auto 10px;
+                padding: 0;
+                width: 320px;
+                
+                .summary {
+                    color: white;
+                    display: inline-block;
+                    margin: 0;
+                    padding: 10px 15px;
+                    vertical-align: middle;
+                    text-shadow: 0 1px 1px @c1-dark;
+                    width: 210px; // 240 - 2 * 15
+                    
+                    .teacher {
+                        color: lighten(@c1-light, 35%);
+                        font-weight: normal;
+                        font-style: italic;
+                    }
+                }
+                
+                .details {
+                    background-color: @c1-dark;
+                    color: white;
+                    display: inline-block;
+                    margin: 0;
+                    height: 100%;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-shadow: 0 -1px 1px darken(@c1-dark, 20%);
+                    vertical-align: middle;
+                    width: 60px; // 80 - 2 * 10
+                    
+                    .startTime, .location, .endTime {
+                        display: block;
+                        padding: 5px;
+                    }
+                    
+                    .startTime, .endTime {
+                        display: block;
+                        padding: 5px;
+                    }
+                    
+                    .location {
+                        color: lighten(@c1-light, 40%);
+                        font-size: 16px;
+                        border-top: 1px solid darken(@c1-dark, 10%);
+                        border-bottom: 1px solid darken(@c1-dark, 10%);
+                    }
+                }
+            }
+            
+            .event[categories="DS"] {
+                background-color: @c3-light;
+            }
+        }
+    }
+}
+
+
+/**
+ * Formulaire de sélection du groupe
+ */
+
+.group-selection-container {
+    
+    h2 {
+        .mixin-header-button;
+    }
+    
+    h2:hover {
+        background: lighten(@c0-light, 10%);
+        cursor: pointer;
+    }
+    
+    h2.group-selected {
+        background: transparent;
+        font-style: italic;
+    }
+    
+    h2 + div {
+        padding-left: 20px;
+    }
+    
+    fieldset {
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        > ul ul {
+            padding-left: 30px;
+        }
+        
+        // Bouton d'affichage/masquage de groupe
+        button.toggle-group, label {
+            .mixin-header-button;
+            border-left: 2px solid @c0-dark;
+        }
+        
+        button.toggle-group {
+            width: 100%;
+            line-height: 26px;
+        }
+        
+        button.toggle-group:hover,
+        button.toggle-group:focus,
+        label:hover {
+            background: lighten(@c0-light, 10%);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        button:focus, label:hover {
+            outline: 0;
+        }
+        
+        input[type="radio"] {
+            border-radius: 50%;
+            float: right;
+            height: 13px;
+            width: 13px;
+            margin-top: 13px;
+            margin-right: 16px;
+        }
+    }
+}
+
+label.option {
+    .mixin-header-button;
+    
+    input {
+        margin-top: 5px;
+        margin-right: 10px;
+        float: right;
+    }
+}
+
+label.option:hover,
+label.option:focus {
+    background: lighten(@c0-light, 10%);
+    cursor: pointer;
+}
+
+hr {
+    color: @c0-dark;
+    border-color: @c0-dark;
+}
+
+
+/**
+ * Pied de page
+ */
+
+.footer-container {
+    background: @c0-light;
+    border-bottom: 20px solid @c0-dark;
+    line-height: 26px;
+    font-size: 12px;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 0 1px 1px @c0-dark;
+    
+    ul {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+    
+    a, a:visited {
+        display: inline-block;
+        color: white;
+        padding: 0 2px;
+        text-decoration: none;
+        
+        [class^="icon-"],
+        [class*=" icon-"] {
+            font-size: 18px;
+            margin-right: 3px;
+        }
+    }
+    
+    a:hover, a:focus , a:active {
+        outline: lighten(@c0-light, 40%) dotted 1px;
+    }
+}
+
+
+/**
+ * Ajustements selon les écrans.
+ */
+
+@media all and (min-width: 10px) {
+    body {
+        // Affichage de l'image de fond uniquement pour les grands écrans.
+        background: url("../images/shl.png");
+    }
+}
