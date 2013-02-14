@@ -11,9 +11,9 @@
         </style>
     </head>
     <body>
-        <!--[if lt IE 9]>
-        <p class="chromeframe">Vous utilisez un navigateur dépassé. <a href="http://browsehappy.com/">Mettez le à jour maintetant</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">installez Google Chrome Frame</a> pour une meilleur expérience sur ce site.</p>
-        <![endif]-->
-        <img src="./images/404.png" alt="404 Not Found" />
+        <h1><img src="./images/404.png" alt="404 Not Found" /></h1>
+        <noscript>
+            <p>Vous devez <strong>activer Javascript</strong> dans votre navigateur.</p>
+        </noscript>
     </body>
 </html>
