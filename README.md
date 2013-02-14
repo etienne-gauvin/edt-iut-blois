@@ -7,8 +7,10 @@ Description
 Emploi du temps pour les élèves de l'IUT de Blois,
 avec mise à jour automatique ou sur demande, et sauvegarde
 des données pour une consultation hors-ligne.
+Cette application est plutôt faite pour la consultation sur mobile.
+Un navigateur récent (avec JavaScript) est requis.
 
-_Visible en ligne sur http://edtb.eu01.aws.af.cm/_
+_Voir en ligne sur http://edtb.eu01.aws.af.cm/_
 
 Fonctionnement
 --------------
