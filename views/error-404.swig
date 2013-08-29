@@ -11,7 +11,7 @@
         </style>
     </head>
     <body>
-        <h1><img src="./images/404.png" alt="404 Not Found" /></h1>
+        <h1><img src="/images/404.png" alt="404 Not Found" /></h1>
         <noscript>
             <p>Vous devez <strong>activer Javascript</strong> dans votre navigateur.</p>
         </noscript>
