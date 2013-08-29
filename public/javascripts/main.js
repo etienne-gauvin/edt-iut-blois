@@ -103,20 +103,64 @@ $(function()
       if (update)
         console.log("Demande de mise à jour.");
       
-      // Pré-chargement de la semaine suivante
-      var nextWeek = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000);
-      
-      getEdt(nextWeek.getYear() + 1900, getWeek(nextWeek), group, update);
-      
       // Chargement et affichage de la semaine actuelle
       getEdt(date.getYear() + 1900, getWeek(date), group, update, function (edt)
       {
         Edt.isLoading = false;
+        Edt.date = date
         updateSubmitButtonText()
         
         console.log(edt);
         displayEdT(edt);
       });
+      
+      // Pré-chargement de la semaine suivante
+      var nextWeek = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000);
+      getEdt(nextWeek.getYear() + 1900, getWeek(nextWeek), group, update);
+    }
+    
+    return false;
+  });
+  
+  /**
+   * Changer de semaine affichée
+   */
+  
+  $('#next-week, #prev-week').live('click', function(evt)
+  {
+    evt.preventDefault();
+    $('.error-container .error').empty()
+    
+    console.log("Groupe : " + Edt.group)
+    
+    if (! Edt.isLoading)
+    {
+      Edt.isLoading = true;
+      updateSubmitButtonText()
+      
+      var year
+      , week
+      , group = $('[name="group"][value]:checked').val()
+      , date = new Date(Edt.date.getTime() + 7 * 24 * 60 * 60 * 1000 * parseInt($(this).attr('data-week')))
+      , update = !!$('[name="update"]:checked').length;
+      
+      if (update)
+        console.log("Demande de mise à jour.");
+      
+      // Chargement et affichage de la semaine actuelle
+      getEdt(date.getYear() + 1900, getWeek(date), group, update, function (edt)
+      {
+        Edt.isLoading = false;
+        Edt.date = date;
+        updateSubmitButtonText()
+        
+        console.log(edt);
+        displayEdT(edt);
+      });
+      
+      // Pré-chargement de la semaine suivante
+      var nextWeek = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000);
+      getEdt(nextWeek.getYear() + 1900, getWeek(nextWeek), group, update);
     }
     
     return false;
@@ -140,7 +184,7 @@ $(function()
     }
     
     // Récupération du fichier en ligne
-    console.log('/edt/' + year + '/' + week + '/' + group + (update ? '/update.json' : '.json'));
+    console.log('Requête: /edt/' + year + '/' + week + '/' + group + (update ? '/update.json' : '.json'));
     $.getJSON('/edt/' + year + '/' + week + '/' + group + (update ? '/update.json' : '.json'), function(data)
     {
       if (data && !data.err && Storage)
@@ -214,7 +258,7 @@ $(function()
       
       $('.week-infos').empty();
       
-      var content = tmpl('edt_title_tmpl', {
+      var content = tmpl('week_infos_tmpl', {
         startDate: start.getDate() + suffStart + monthStart,
         endDate: end.getDate() + suffEnd + ' ' + monthNames[end.getMonth()],
         lastUpdate: getDifferenceText(new Date(dateParse(edt.edt.lastUpdate)), new Date)
@@ -281,6 +325,7 @@ $(function()
     }
     
     $('.edt-container').show();
+    $('.edt-infos-container').show();
   }
 });
 

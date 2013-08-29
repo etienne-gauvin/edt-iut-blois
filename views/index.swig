@@ -56,7 +56,7 @@
         </div>
         
         <!-- Liste des groupes -->
-        <div class="group-selection-container large-33 small-100">
+        <div class="group-selection-container large-40 medium-40 small-100">
           <h2 class="toggle-visibility closed button">Choisir un groupe <span class='icon-caret-down'></span></h2>
           <fieldset class="hidden">
             {# Affichage de la liste des groupes (macro récursive) #}
@@ -130,14 +130,15 @@
       </form>
       
       <!-- Conteneur de l'emploi du temps -->
-      <div class="edt-container column-group gutters" id='edt' style='display:none'>
+      <div class="edt-infos-container" id='edt' style='display:none'>
         
         <!-- Affichage du groupe et de la date de l'edt -->
-        <header class="week-infos"></header>
+        <nav class="week-infos">
+        </nav>
         
         <!-- Ici vient l'emploi du temps -->
         <section>
-          <ul class="edt-container unstyled" style='display:none'>
+          <ul class="edt-container column-group gutters">
             <!--
             <li class="day-container large-20 medium-20 small-100" data-day="X">
               <div class='day'>
@@ -176,11 +177,6 @@
     </script>
     
     <!-- Templates -->
-    <script type='text/html' id='edt_title_tmpl'>
-      <h2>Semaine du <%=startDate%> au <%=endDate%></h2>
-      <p>Mise à jour effectuée <%=lastUpdate%></p>
-    </script>
-    
     <script type='text/html' id='event_tmpl'>
       <p class="details">
         <span class="startTime"><%=startTime%></span>
@@ -191,6 +187,15 @@
         <%=summary%><br />
         <span class="teacher"'><%=teacher%></span>
       </p>
+    </script>
+    
+    <script type='text/html' id='week_infos_tmpl'>
+      <h2>
+        <a id="prev-week" href="#" title="Semaine précédente" data-week="-1"><span class="icon-chevron-left"></span></a>
+        Semaine du <%=startDate%> au <%=endDate%>
+        <a id="next-week" href="#" title="Semaine suivante" data-week="1"><span class="icon-chevron-right"></span></a>
+      </h2>
+      <p>Mise à jour effectuée <%=lastUpdate%></p>
     </script>
     
     

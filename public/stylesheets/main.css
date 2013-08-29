@@ -40,11 +40,11 @@ html {
 }
 .group-selection-container h2.closed {
   border-radius: 4px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 .group-selection-container fieldset {
   border: 0;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   border-radius: 0 0 4px 4px;
   margin: 0;
   padding: 0;
@@ -138,6 +138,48 @@ html {
 .submit-container button {
   width: 100%;
 }
+.week-infos {
+  color: black;
+  background: #b2b9c2;
+  border-radius: 4px;
+  margin-bottom: 2em;
+  text-align: center;
+  padding: 6px 0 10px;
+}
+.week-infos h2 {
+  font-size: 22px;
+  margin: 0 0 4px;
+  line-height: 32px;
+}
+.week-infos a {
+  display: inline-block;
+  color: #798596;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  width: 2em;
+  vertical-align: middle;
+  border-radius: 50%;
+  text-shadow: 0 1px 1px black;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  -ms-transition: 150ms ease-in-out;
+  -0-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
+}
+.week-infos a:hover {
+  background-color: #b2b9c2;
+  color: white;
+}
+.week-infos p {
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 4px;
+}
+.edt-infos-container {
+  margin-top: 0;
+}
 .edt-container {
   color: black;
   padding: 0;
@@ -153,7 +195,7 @@ html {
 }
 .edt-container .day-container .day {
   border-radius: 4px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   overflow: hidden;
 }
 .edt-container .day-container .day h3 {
@@ -224,6 +266,7 @@ html {
   background: transparent;
 }
 .footer-container footer ul {
+  color: #AAA;
   list-style: none;
   padding: 0;
 }
@@ -254,7 +297,7 @@ html {
   background: linear-gradient(to bottom, #b02124 0%, #7e1517 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#af2123', endColorstr='#7c1516', GradientType=0);
   border-radius: 4px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   color: white;
   font-size: 16px;
   text-align: center;
@@ -277,7 +320,7 @@ html {
   background: linear-gradient(to bottom, #f2f2f2 0%, #b2b9c2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#b0b7c1', GradientType=0);
   border: 0;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   border-radius: 4px;
   color: black;
   font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
@@ -326,5 +369,8 @@ html {
   }
   h1 {
     text-align: center;
+  }
+  .week-infos {
+    margin-bottom: 1em;
   }
 }
