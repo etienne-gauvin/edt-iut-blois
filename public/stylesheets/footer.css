@@ -1,0 +1,24 @@
+.footer-container footer {
+  border: 0;
+  background: transparent;
+}
+.footer-container footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-container footer a,
+.footer-container footer a:visited {
+  color: #AAA;
+  text-decoration: none;
+}
+.footer-container footer a span,
+.footer-container footer a:visited span {
+  text-decoration: none;
+  margin: 0 4px 0 0;
+}
+.footer-container footer a:hover,
+.footer-container footer a:active,
+.footer-container footer a:focus {
+  color: white;
+  text-decoration: underline;
+}

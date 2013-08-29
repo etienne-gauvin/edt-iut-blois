@@ -1,0 +1,23 @@
+/* Container des erreurs */
+.error-container > * {
+  background: #af2123;
+  background: -moz-linear-gradient(top, #b02124 0%, #7e1517 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b02124), color-stop(100%, #7e1517));
+  background: -webkit-linear-gradient(top, #b02124 0%, #7e1517 100%);
+  background: -o-linear-gradient(top, #b02124 0%, #7e1517 100%);
+  background: -ms-linear-gradient(top, #b02124 0%, #7e1517 100%);
+  background: linear-gradient(to bottom, #b02124 0%, #7e1517 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#af2123', endColorstr='#7c1516', GradientType=0);
+  border-radius: 4px;
+  border-bottom: 2px solid black;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 8px 16px;
+}
+.error-container > * span[class*="icon-"] {
+  margin-right: 8px;
+}
+.error-container > *:empty {
+  display: none;
+}

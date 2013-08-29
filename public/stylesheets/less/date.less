@@ -1,0 +1,28 @@
+.date-radio-input {
+  
+  label {
+    display: block;
+    
+    span {
+      float: right;
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      top: 2px;
+    }
+    
+    input {
+      display: none;
+    }
+    
+    input:checked + span:before {
+      content: "\f111";
+    }
+    
+    input:not(:checked) + span:before {
+      content: "\f10c";
+    }
+  }
+}

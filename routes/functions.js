@@ -35,11 +35,10 @@ var generate_mongo_url = function(obj) {
 }
 
 var mongourl = generate_mongo_url(mongo);
-
-// 
-console.log(mongourl);
-
 var db = require("mongojs").connect(mongourl, ['edts']);
+
+// Juste le user-agent
+var userAgent = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; CIBA; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)"
 
 /**
  * Cherche un calendrier, dans la base de donnée ou sur le site de l'IUT.
@@ -49,7 +48,7 @@ var db = require("mongojs").connect(mongourl, ['edts']);
  * @param minUpdate la date minimale de dernière mise à jour de l'emploi du temps (par défaut, "hier")
  * @param callback appelé après l'exécution, avec les paramètres edt (l'emploi du temps, ou null) et err (un éventuel message d'erreur)
  */
-exports.getEdT = function(year, week, group, minUpdate, callback)
+exports.getEdT = function(year, week, group, minUpdate, phpsessid, callback)
 {
     var relativeWeek = exports.getRelativeWeek(year, week);
     
@@ -66,7 +65,7 @@ exports.getEdT = function(year, week, group, minUpdate, callback)
             console.log("Aucun emploi du temps trouvé en base de donnée.");
             
             // Récupération de l'emploi du temps sur le site de l'IUT
-            getCalendarFile(relativeWeek, group, function(content, err)
+            getCalendarFile(relativeWeek, group, phpsessid, function(content, err)
             {
                 if (!content || err) {
                     callback(null, err);
@@ -114,7 +113,7 @@ exports.getEdT = function(year, week, group, minUpdate, callback)
  * @param group
  * @param callback est appelé après exécution, avec les paramètres content et err (message d'une éventuelle erreur)
  */
-function getCalendarFile(relativeWeek, group, callback)
+function getCalendarFile(relativeWeek, group, phpsessid, callback)
 {
     // Paramètres POST
     var postData = querystring.stringify({
@@ -140,8 +139,9 @@ function getCalendarFile(relativeWeek, group, callback)
         path: '/edt/edtksup_affiche.php',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': postData.length
+          'Cookie': [phpsessid],
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': postData.length
         }
     };
     
@@ -166,7 +166,10 @@ function getCalendarFile(relativeWeek, group, callback)
                     hostname: 'wws.blois.univ-tours.fr',
                     port: 443,
                     path: '/edt/' + m[1],
-                    method: 'GET'
+                    method: 'GET',
+                    headers: {
+                      'Cookie': [phpsessid]
+                    }
                 };
                 
                 var edtStr = '';
@@ -194,6 +197,7 @@ function getCalendarFile(relativeWeek, group, callback)
                 });
             }
             else {
+                console.log('HEADERS: ' + JSON.stringify(res1.headers));
                 console.log("URL introuvable dans la page.");
                 callback(null, "Emploi du temps introuvable, celui-ci n'est peut-être pas encore publié, ou il n'y a pas cours cette semaine.");
             }
@@ -206,6 +210,46 @@ function getCalendarFile(relativeWeek, group, callback)
     req1.on('error', function(e)
     {
         console.log("Une erreur de connexion est survenue : ", e);
+        callback(null, "Une erreur est survenue, l'emploi du temps est introuvable.");
+    });
+}
+
+/**
+ * Retourne un identifiant de session PHP
+ */
+exports.getPHPSessId = function(callback)
+{
+    // Paramètres de la requête HTTPS
+    var params = {
+        hostname: 'wws.blois.univ-tours.fr',
+        port: 443,
+        path: '/edt/edtksupn.php',
+        method: 'GET'
+    };
+    
+    // Envoi de la requête
+    var req = https.request(params, function(res) {
+      
+      var cookies = res.headers['set-cookie'] || res.headers['Set-Cookie'];
+      
+      for (var icookie in cookies)
+      {
+        if (cookies[icookie].search(/^PHPSESSID=/) == 0)
+        {
+          console.log(cookies[icookie]);
+          callback(cookies[icookie])
+          break;
+        }
+      }
+      
+      req.abort();
+    })
+    
+    req.end();
+    
+    req.on('error', function(e)
+    {
+        console.log("Une erreur de connexion est survenue lors de la récupération du PHPSESSID : ", e);
         callback(null, "Une erreur est survenue, l'emploi du temps est introuvable.");
     });
 }
@@ -265,12 +309,27 @@ function convertEdT(edtStr)
             // Description (pour récupérer le nom du prof)
             else if (key == 'DESCRIPTION' && edt[currentEventIndex].summary && edt[currentEventIndex].location)
             {
-                var m = val.match(new RegExp('^' + edt[currentEventIndex].summary + ' - (.+) - ' + edt[currentEventIndex].location + '$'));
-                
-                if (m && m[1])
-                    edt[currentEventIndex].teacher = m[1];
-                
-                edt[currentEventIndex].description = val;
+              // Échapper les caractères pouvant poser quelques problèmes
+              // dans l'expression régulière
+              var escape = function(s) {
+                return s
+                  .replace(/\(/g, '\\(')
+                  .replace(/\)/g, '\\)')
+                  .replace(/\./g, '\\.')
+                  .replace(/\[/g, '\\[')
+                  .replace(/\]/g, '\\]')
+                  .replace(/\*/g, '\\*')
+                  .replace(/\+/g, '\\+')
+              } 
+              
+              var summary =  escape(edt[currentEventIndex].summary);
+              var location = escape(edt[currentEventIndex].location)
+              var m = val.match(new RegExp('^' + summary + ' - (.+) - ' + location + '$'));
+              
+              if (m && m[1])
+                  edt[currentEventIndex].teacher = m[1];
+              
+              edt[currentEventIndex].description = val;
             }
             
             // Tous les autres éléments

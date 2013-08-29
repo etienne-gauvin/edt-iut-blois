@@ -18,7 +18,6 @@ exports.index = function(req, res)
     
     // Tableau pour l'affichage des données
     var data = {
-        baseUrl: "/",
         groupsJSON: groupsJSON,
         groups: groups
     };

@@ -1,0 +1,96 @@
+
+/* Style du menu de choix de groupe */
+.group-selection-container {
+  border-radius: 4px;
+  
+  h2 {
+    border: 0;
+    border-radius: 4px 4px 0 0;
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+    
+    margin: 0;
+    padding: 8px 16px;
+    
+    &:hover {
+      background: #d7dade;
+      cursor: pointer;
+    }
+    
+    &.closed {
+      border-radius: 4px;
+      border-bottom: 2px solid black;
+    }
+  }
+  
+  fieldset {
+    border: 0;
+    border-bottom: 2px solid black;
+    border-radius: 0 0 4px 4px;
+    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  
+  // Masquage des éléments
+  fieldset.hidden, fieldset > ul ul.hidden {
+    display: none;
+  }
+  
+  ul {
+    background: hsl(215, 12%, 73%);
+    font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+    font-size: 16px;
+    
+    list-style: none;
+    padding: 0;
+    
+    & ul {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0;
+    }
+    
+    li {
+      margin: 0;
+    }
+    
+    a, label {
+      border: 0;
+      color: #444;
+      text-align: left;
+      
+      display: block;
+      margin: 0;
+      padding: 8px 16px;
+      vertical-align: top;
+      width: 100%;
+      
+      transition: 200ms ease-in-out;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #000;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+    
+    input {
+      display: none;
+    }
+    
+    input:checked + label {
+      background-color: #2D4552;
+      color: white;
+    }
+  }
+  
+  fieldset > ul > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+

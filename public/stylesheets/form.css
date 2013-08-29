@@ -1,0 +1,40 @@
+.date-radio-input label,
+.checkbox-input label {
+  display: block;
+}
+.date-radio-input label span,
+.checkbox-input label span {
+  float: right;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  top: 2px;
+  width: 16px;
+  text-align: left;
+}
+.date-radio-input label input,
+.checkbox-input label input {
+  display: none;
+}
+.date-radio-input label input[type="radio"]:checked + span:before,
+.checkbox-input label input[type="radio"]:checked + span:before {
+  content: "\f111";
+}
+.date-radio-input label input[type="radio"]:not(:checked) + span:before,
+.checkbox-input label input[type="radio"]:not(:checked) + span:before {
+  content: "\f10c";
+}
+.date-radio-input label input[type="checkbox"]:checked + span:before,
+.checkbox-input label input[type="checkbox"]:checked + span:before {
+  content: "\f046";
+}
+.date-radio-input label input[type="checkbox"]:not(:checked) + span:before,
+.checkbox-input label input[type="checkbox"]:not(:checked) + span:before {
+  content: "\f096";
+}
+/* Bouton de validation */
+.submit-container button {
+  width: 100%;
+}

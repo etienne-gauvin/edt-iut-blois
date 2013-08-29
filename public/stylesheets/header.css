@@ -1,0 +1,12 @@
+/* En-tête */
+.header-container header h1 a,
+.header-container header h1 a:visited,
+.header-container header h1 a:active,
+.header-container header h1 a:focus,
+.header-container header h1 a:hover {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 2px 0 black;
+  outline: 0;
+  border: 0;
+}

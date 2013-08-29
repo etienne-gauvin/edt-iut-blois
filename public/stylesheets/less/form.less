@@ -1,0 +1,46 @@
+.date-radio-input, .checkbox-input {
+  
+  label {
+    display: block;
+    
+    span {
+      float: right;
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      top: 2px;
+      width: 16px;
+      text-align: left;
+    }
+    
+    input {
+      display: none;
+    }
+    
+    input[type="radio"]:checked + span:before {
+      content: "\f111";
+    }
+    
+    input[type="radio"]:not(:checked) + span:before {
+      content: "\f10c";
+    }
+    
+    input[type="checkbox"]:checked + span:before {
+      content: "\f046";
+    }
+    
+    input[type="checkbox"]:not(:checked) + span:before {
+      content: "\f096";
+    }
+  }
+}
+
+/* Bouton de validation */
+.submit-container {
+  button {
+    width: 100%;
+  }
+}
+

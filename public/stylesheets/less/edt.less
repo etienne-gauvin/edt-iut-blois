@@ -1,0 +1,100 @@
+.edt-container {
+  color: black;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  li {
+    list-style: none;
+  }
+  
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .day-container {
+    .day {
+      border-radius: 4px;
+      border-bottom: 2px solid black;
+      overflow: hidden;
+      
+      h3 {
+        background: -moz-linear-gradient(top,  hsla(0,0%,95%,1) 0%, hsla(215,12%,73%,1) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(0,0%,95%,1)), color-stop(100%,hsla(215,12%,73%,1)));
+        background: -webkit-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
+        background: -o-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
+        background: -ms-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
+        background: linear-gradient(to bottom,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#b0b7c1',GradientType=0 );
+        
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 -1px 1px rgba(255, 255, 255, 0.1) inset;
+        color: black;
+        font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+        font-size: 20px;
+        font-weight: normal;
+        
+        margin: 0;
+        padding: 8px 16px;
+      }
+      
+      .event-list {
+        background: hsl(215,12%,73%);
+        margin: 0;
+        
+        > :nth-child(even) {
+          background-color: hsl(230,12%,68%); 
+        }
+        
+        .interlude {
+          color: #444;
+          
+          [class*="icon-"] {
+            float: right;
+          }
+        }
+        
+        .event, .interlude {
+          margin: 0;
+          padding: 8px 16px;
+        }
+      }
+      
+      .details {
+        color: black;
+        text-align: center;
+        
+        margin: 0 0 4px;
+        padding: 0;
+        font-size: 14px;
+        
+        .location {
+          font-family: "Ubuntu Condensed", Ubuntu_condensed;
+        }
+        
+        .startTime {
+          color: #444;
+          float: left;
+        }
+
+        .endTime {
+          color: #444;
+          float: right;
+        }
+      }
+      
+      .summary {
+        text-align: center;
+      }
+      
+      .teacher {
+        display: block;
+        color: #666;
+        font-family: "Ubuntu Condensed", Ubuntu_condensed;
+        font-size: 12px;
+        font-style: italic;
+        margin-top: 8px;
+      }
+    }
+  }
+}

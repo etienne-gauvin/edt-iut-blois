@@ -44,19 +44,30 @@ exports.edt = function(req, res)
     // Intervalle minimale entre les mises à jours
     var interval = new Date((new Date).getTime() - 1000 * 60 * 60);
     
-    // Chargement de la semaine
-    f.getEdT(data.year, data.week, data.group, (req.params.update ? interval : null), function(edt, err)
+    // Création d'un cookie de session si nécessaire
+    f.getPHPSessId(function(phpsessid, err)
     {
-        if (!edt && !err) {
-            data.err = "Une erreur est survenue, l'emploi du temps est introuvable.";
-        }
-        else if (!edt && err) {
-            data.err = err;
-        }
-        else {
-            data.edt = edt;
-        }
-        
+      if (phpsessid && typeof err == 'undefined')
+      {
+        // Chargement de la semaine
+        f.getEdT(data.year, data.week, data.group, (req.params.update ? interval : null), phpsessid, function(edt, err)
+        {
+          if (!edt && !err) {
+              data.err = "Une erreur est survenue, l'emploi du temps est introuvable.";
+          }
+          else if (!edt && err) {
+              data.err = err;
+          }
+          else {
+              data.edt = edt;
+          }
+          
+          res.send(data);
+        });
+      }
+      else {
+        data.err = err;
         res.send(data);
+      }
     });
 }
