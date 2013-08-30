@@ -357,6 +357,7 @@ body {
 }
 .set-background .image:hover {
   border-color: #EEE;
+  cursor: pointer;
 }
 .set-background .image.selected {
   border-color: white;
@@ -371,6 +372,67 @@ body {
 }
 .set-background .home-link a:hover {
   text-decoration: none;
+}
+.set-background .background-url {
+  background: #f7f7f7 !important;
+}
+.set-background .background-url span[class*="icon-"] {
+  float: none;
+  margin: 0;
+  margin-right: 4px;
+}
+.set-background .background-url:hover {
+  cursor: default !important;
+}
+.set-background .background-url input {
+  margin: 10px 0 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 100%;
+}
+.set-background .background-url input:not(.hide-large) {
+  display: block;
+}
+.set-background .background-url input[type="submit"] {
+  background: #111111;
+  background: -moz-linear-gradient(top, #222222 0%, #111111 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222222), color-stop(100%, #111111));
+  background: -webkit-linear-gradient(top, #222222 0%, #111111 100%);
+  background: -o-linear-gradient(top, #222222 0%, #111111 100%);
+  background: -ms-linear-gradient(top, #222222 0%, #111111 100%);
+  background: linear-gradient(to bottom, #222222 0%, #111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
+  background-color: #111;
+  color: #DDD;
+  border: 2px solid #111;
+  font-weight: bold;
+}
+.set-background .background-url input[type="submit"]:hover,
+.set-background .background-url input[type="submit"]:focus {
+  background: #111;
+  color: white;
+}
+.set-background .background-url input[type="text"] {
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #f8f8f8 0%, #ffffff 100%);
+  background: -o-linear-gradient(top, #f8f8f8 0%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #f8f8f8 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
+  border: 2px solid white;
+  color: black;
+  font-family: "Ubuntu Condensed", Ubuntu_condensed;
+}
+.set-background .background-url input[type="text"]:focus,
+.set-background .background-url input[type="text"].selected {
+  border: 2px solid #666;
+  outline: 0;
+}
+.set-background .background-url small {
+  font-size: 13px;
 }
 /* Style de bouton */
 .button {

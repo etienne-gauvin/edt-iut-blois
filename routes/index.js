@@ -31,7 +31,9 @@ exports.index = function(req, res)
 
 exports.setBackground = function(req, res)
 {
+  var backgrounds = fs.readdirSync('public/images/backgrounds').sort();
+  
   res.render('set-background', {
-    backgrounds: fs.readdirSync('public/images/backgrounds') || []
+    backgrounds: backgrounds || []
   });
 };

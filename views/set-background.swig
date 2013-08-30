@@ -44,6 +44,13 @@
         <div class="large-20 medium-33 small-100">
           <a href="/" class='button' style="display: block;"><span class='icon-reply'></span> Retour</a>
         </div>
+        <div class="large-80 medium-66 small-100">
+          <form class="background-url button">
+            <span class='icon-globe'></span> URL d'une image : <small class="hide-small">(<i>Entrée</i> pour valider)</small>
+            <input type="text" placeholder="http://" name="background-url" />
+            <input type="submit" class="hide-large" />
+          </form>
+        </div>
       </div>
       
       <ul class="backgrounds column-group gutters unstyled">
