@@ -19,9 +19,10 @@ else {
         "username":"",
         "password":"",
         "name":"",
-        "db":"db"
+        "db":"edtdb"
     }
 }
+
 var generate_mongo_url = function(obj) {
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
@@ -34,11 +35,7 @@ var generate_mongo_url = function(obj) {
     }
 }
 
-var mongourl = generate_mongo_url(mongo);
-var db = require("mongojs").connect(mongourl, ['edts']);
-
-// Juste le user-agent
-var userAgent = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; CIBA; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)"
+var db = require("mongojs").connect(generate_mongo_url(mongo), ['edtcoll']);
 
 /**
  * Cherche un calendrier, dans la base de donnée ou sur le site de l'IUT.
@@ -58,7 +55,7 @@ exports.getEdT = function(year, week, group, minUpdate, phpsessid, callback)
     // Cherche l'emploi du temps dans la base de données
 //     console.log(db.error());
     
-    db.edts.findOne({year: year, week: week, group: group, lastUpdate: {$gt: minUpdate}}, function(err, edt)
+    db.edtcoll.findOne({year: year, week: week, group: group, lastUpdate: {$gt: minUpdate}}, function(err, edt)
     {
         if (err || !edt)
         {
@@ -87,10 +84,10 @@ exports.getEdT = function(year, week, group, minUpdate, phpsessid, callback)
                         }
                         
                         // Insertion en base de donnée
-                        db.edts.insert(edt);
-                        
-                        // Renvoi des données
-                        callback(edt);
+                        db.edtcoll.insert(edt, function()
+                        {
+                          callback(edt);
+                        });
                     }
                 }
             });
