@@ -1,7 +1,8 @@
 .week-infos {
-  color: black;
-  background: hsl(215,12%,73%);
+  color: @text-color;
+  background: @main-color;
   border-radius: 4px;
+  border-bottom: 1px solid @shadow-color;
   margin-bottom: 2em;
   text-align: center;
   padding: 6px 0 10px;
@@ -14,14 +15,16 @@
   
   a {
     display: inline-block;
-    color: hsl(215,12%,53%);
+    color: @text-color;
     text-decoration: none;
     text-align: center;
     font-size: 18px;
-    width: 2em;
+    padding: 6px;
+    width: 18px + 2 * 6px;
+    height: 18px + 2 * 6px;
+    line-height: 18px;
     vertical-align: middle;
     border-radius: 50%;
-    text-shadow: 0 1px 1px black;
     -webkit-transition: 150ms ease-in-out;
     -moz-transition: 150ms ease-in-out;
     -ms-transition: 150ms ease-in-out;
@@ -36,8 +39,8 @@
     }
     
     &:hover {
-      background-color: hsl(215,12%,73%);
-      color: white;
+      background-color: @text-color;
+      color: @main-color;
     }
   }
 

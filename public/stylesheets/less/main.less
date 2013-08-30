@@ -1,14 +1,19 @@
+@import "mixins.less";
+@import "colors.less";
+
 /* Corps de la page */
 html {
-  background-color: #111c22;
-  background-image: url("/images/background.png");
-  font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 14px;
   
   overflow: scroll;
   overflow-x: hidden;
   overlfow-y: scroll;
   padding-top: 2em;
+}
+
+body {
+  background-color: @background-color;
 }
 
 @import "header.less";
@@ -18,33 +23,28 @@ html {
 @import "edt.less";
 @import "footer.less";
 @import "errors.less";
+@import "set-background.less";
 
 /* Style de bouton */
 .button {
-  background: #f2f2f2;
-  background: -moz-linear-gradient(top,  hsla(0,0%,95%,1) 0%, hsla(215,12%,73%,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(0,0%,95%,1)), color-stop(100%,hsla(215,12%,73%,1)));
-  background: -webkit-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-  background: -o-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-  background: -ms-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-  background: linear-gradient(to bottom,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#b0b7c1',GradientType=0 );
+  .gradient(@button-color-a, @button-color-b);
   border: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid @shadow-color;
   border-radius: 4px;
-  color: black;
-  font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+  color: @text-color;
+  font-family: "Ubuntu Condensed", Ubuntu_condensed;
   font-size: 16px;
   
   margin: 0;
   padding: 8px 16px;
   
   &:not(:disabled):hover {
-    background: #d7dade;
+    background: @button-color-hover;
+    color: @button-text-color-hover;
     cursor: pointer;
   }
   
-  > span[class^="icon-"] {
+  > span[class*="icon-"] {
     float: right;
   }
 }

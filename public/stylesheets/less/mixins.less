@@ -1,0 +1,14 @@
+
+// Dégradé vertical comme fond
+// @colora: couleur en haut
+// @colorb: couleur en bas (et couleur principale)
+.gradient(@colora, @colorb) {
+  background: @colorb;
+  background: -moz-linear-gradient(top,  @colora 0%,  @colorb 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @colora), color-stop(100%, @colorb));
+  background: -webkit-linear-gradient(top, @colora 0%, @colorb 100%);
+  background: -o-linear-gradient(top, @colora 0%, @colorb 100%);
+  background: -ms-linear-gradient(top, @colora 0%, @colorb 100%);
+  background: linear-gradient(to bottom, @colora 0%, @colorb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='argb(@colora)', endColorstr='argb(@colorb)',GradientType=0 );
+}

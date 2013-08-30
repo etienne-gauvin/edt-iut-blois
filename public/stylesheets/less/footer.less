@@ -3,15 +3,17 @@
   footer {
     border: 0;
     background: transparent;
+    font-size: 16px;
     
     ul {
-      color: #AAA;
+      color: @footer-text-color;
       list-style: none;
       padding: 0;
+      text-shadow: 0 1px 3px @shadow-color;
     }
     
     a, a:visited {
-      color: #AAA;
+      color: @footer-text-color;
       text-decoration: none;
       
       span {
@@ -21,7 +23,7 @@
     }
     
     a:hover, a:active, a:focus {
-      color: white;
+      color: @footer-text-color;
       text-decoration: underline;
     }
   }

@@ -1,13 +1,15 @@
+/* Couleurs */
 /* Corps de la page */
 html {
-  background-color: #111c22;
-  background-image: url("/images/background.png");
-  font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 14px;
   overflow: scroll;
   overflow-x: hidden;
   overlfow-y: scroll;
   padding-top: 2em;
+}
+body {
+  background-color: #666666;
 }
 /* En-tête */
 .header-container header h1 a,
@@ -15,9 +17,9 @@ html {
 .header-container header h1 a:active,
 .header-container header h1 a:focus,
 .header-container header h1 a:hover {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  text-shadow: 0 2px 0 black;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6);
   outline: 0;
   border: 0;
 }
@@ -26,25 +28,34 @@ html {
   border-radius: 4px;
 }
 .group-selection-container h2 {
+  background: #c4c4c4;
+  background: -moz-linear-gradient(top, #dddddd 0%, #c4c4c4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #c4c4c4));
+  background: -webkit-linear-gradient(top, #dddddd 0%, #c4c4c4 100%);
+  background: -o-linear-gradient(top, #dddddd 0%, #c4c4c4 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, #c4c4c4 100%);
+  background: linear-gradient(to bottom, #dddddd 0%, #c4c4c4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
   border: 0;
   border-radius: 4px 4px 0 0;
-  color: black;
+  color: #262626;
   font-size: 16px;
   font-weight: normal;
   margin: 0;
   padding: 8px 16px;
 }
-.group-selection-container h2:hover {
-  background: #d7dade;
+.group-selection-container h2:not(:disabled):hover {
+  color: #262626;
+  background: #d0d0d0;
   cursor: pointer;
 }
 .group-selection-container h2.closed {
   border-radius: 4px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
 .group-selection-container fieldset {
   border: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 0 0 4px 4px;
   margin: 0;
   padding: 0;
@@ -56,14 +67,14 @@ html {
   display: none;
 }
 .group-selection-container ul {
-  background: #b2b9c2;
+  background: #c4c4c4;
   font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
   font-size: 16px;
   list-style: none;
   padding: 0;
 }
 .group-selection-container ul ul {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   padding: 0;
 }
 .group-selection-container ul li {
@@ -72,31 +83,30 @@ html {
 .group-selection-container ul a,
 .group-selection-container ul label {
   border: 0;
-  color: #444;
+  color: #262626;
   text-align: left;
   display: block;
   margin: 0;
   padding: 8px 16px;
   vertical-align: top;
   width: 100%;
-  transition: 200ms ease-in-out;
+  transition: 100ms ease-in-out;
 }
 .group-selection-container ul a:hover,
 .group-selection-container ul label:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #262626;
   cursor: pointer;
   text-decoration: none;
 }
 .group-selection-container ul input {
   display: none;
 }
-.group-selection-container ul input:checked + label {
-  background-color: #2D4552;
-  color: white;
-}
-.group-selection-container fieldset > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+.group-selection-container ul input:checked + label,
+.group-selection-container ul input:checked + label:hover {
+  background-color: #9d9d9d;
+  color: #ffffff;
+  font-weight: bold;
 }
 .date-radio-input label,
 .checkbox-input label {
@@ -135,13 +145,28 @@ html {
   content: "\f096";
 }
 /* Bouton de validation */
-.submit-container button {
+.submit-container button[type="submit"].button {
+  background: #e0dada;
+  background: -moz-linear-gradient(top, #f7f6f6 0%, #e0dada 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f6f6), color-stop(100%, #e0dada));
+  background: -webkit-linear-gradient(top, #f7f6f6 0%, #e0dada 100%);
+  background: -o-linear-gradient(top, #f7f6f6 0%, #e0dada 100%);
+  background: -ms-linear-gradient(top, #f7f6f6 0%, #e0dada 100%);
+  background: linear-gradient(to bottom, #f7f6f6 0%, #e0dada 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
+  color: #262626;
   width: 100%;
 }
+.submit-container button[type="submit"].button:not(:disabled):hover {
+  color: #262626;
+  background: #ece8e8;
+  cursor: pointer;
+}
 .week-infos {
-  color: black;
-  background: #b2b9c2;
+  color: #000000;
+  background: #dddddd;
   border-radius: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   margin-bottom: 2em;
   text-align: center;
   padding: 6px 0 10px;
@@ -153,14 +178,16 @@ html {
 }
 .week-infos a {
   display: inline-block;
-  color: #798596;
+  color: #000000;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
-  width: 2em;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  line-height: 18px;
   vertical-align: middle;
   border-radius: 50%;
-  text-shadow: 0 1px 1px black;
   -webkit-transition: 150ms ease-in-out;
   -moz-transition: 150ms ease-in-out;
   -ms-transition: 150ms ease-in-out;
@@ -168,8 +195,8 @@ html {
   transition: 150ms ease-in-out;
 }
 .week-infos a:hover {
-  background-color: #b2b9c2;
-  color: white;
+  background-color: #000000;
+  color: #dddddd;
 }
 .week-infos p {
   color: #666;
@@ -181,7 +208,7 @@ html {
   margin-top: 0;
 }
 .edt-container {
-  color: black;
+  color: #000000;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -195,31 +222,32 @@ html {
 }
 .edt-container .day-container .day {
   border-radius: 4px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   overflow: hidden;
 }
 .edt-container .day-container .day h3 {
-  background: -moz-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2), color-stop(100%, #b2b9c2));
-  background: -webkit-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -o-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -ms-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: linear-gradient(to bottom, #f2f2f2 0%, #b2b9c2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#b0b7c1', GradientType=0);
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #dddddd));
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -o-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: linear-gradient(to bottom, #f7f7f7 0%, #dddddd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 -1px 1px rgba(255, 255, 255, 0.1) inset;
   color: black;
-  font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+  font-family: "Ubuntu Condensed", Ubuntu_condensed;
   font-size: 20px;
   font-weight: normal;
   margin: 0;
   padding: 8px 16px;
 }
 .edt-container .day-container .day .event-list {
-  background: #b2b9c2;
+  background: #dddddd;
   margin: 0;
 }
 .edt-container .day-container .day .event-list > :nth-child(even) {
-  background-color: #a4a7b7;
+  background-color: #d0d0d0;
 }
 .edt-container .day-container .day .event-list .interlude {
   color: #444;
@@ -233,7 +261,7 @@ html {
   padding: 8px 16px;
 }
 .edt-container .day-container .day .details {
-  color: black;
+  color: #000000;
   text-align: center;
   margin: 0 0 4px;
   padding: 0;
@@ -243,11 +271,11 @@ html {
   font-family: "Ubuntu Condensed", Ubuntu_condensed;
 }
 .edt-container .day-container .day .details .startTime {
-  color: #444;
+  color: #4d4d4d;
   float: left;
 }
 .edt-container .day-container .day .details .endTime {
-  color: #444;
+  color: #4d4d4d;
   float: right;
 }
 .edt-container .day-container .day .summary {
@@ -255,7 +283,7 @@ html {
 }
 .edt-container .day-container .day .teacher {
   display: block;
-  color: #666;
+  color: #4d4d4d;
   font-family: "Ubuntu Condensed", Ubuntu_condensed;
   font-size: 12px;
   font-style: italic;
@@ -264,15 +292,17 @@ html {
 .footer-container footer {
   border: 0;
   background: transparent;
+  font-size: 16px;
 }
 .footer-container footer ul {
-  color: #AAA;
+  color: #ffffff;
   list-style: none;
   padding: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 .footer-container footer a,
 .footer-container footer a:visited {
-  color: #AAA;
+  color: #ffffff;
   text-decoration: none;
 }
 .footer-container footer a span,
@@ -283,7 +313,7 @@ html {
 .footer-container footer a:hover,
 .footer-container footer a:active,
 .footer-container footer a:focus {
-  color: white;
+  color: #ffffff;
   text-decoration: underline;
 }
 /* Container des erreurs */
@@ -297,7 +327,7 @@ html {
   background: linear-gradient(to bottom, #b02124 0%, #7e1517 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#af2123', endColorstr='#7c1516', GradientType=0);
   border-radius: 4px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 16px;
   text-align: center;
@@ -309,30 +339,64 @@ html {
 .error-container > *:empty {
   display: none;
 }
+.set-background ul {
+  margin-top: 0;
+}
+.set-background .image {
+  background-repeat: repeat-x repeat-y;
+  background-color: #AAA;
+  border: 4px solid #AAA;
+  border-radius: 7px;
+  min-height: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: border-color 200ms ease-in-out;
+  -webkit-transition: border-color 200ms ease-in-out;
+  -moz-transition: border-color 200ms ease-in-out;
+  -ls-transition: border-color 200ms ease-in-out;
+  -o-transition: border-color 200ms ease-in-out;
+}
+.set-background .image:hover {
+  border-color: #EEE;
+}
+.set-background .image.selected {
+  border-color: white;
+}
+.set-background .home-link a {
+  width: 100%;
+}
+.set-background .home-link a span {
+  float: none;
+  margin: 0;
+  margin-right: 4px;
+}
+.set-background .home-link a:hover {
+  text-decoration: none;
+}
 /* Style de bouton */
 .button {
-  background: #f2f2f2;
-  background: -moz-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2), color-stop(100%, #b2b9c2));
-  background: -webkit-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -o-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: -ms-linear-gradient(top, #f2f2f2 0%, #b2b9c2 100%);
-  background: linear-gradient(to bottom, #f2f2f2 0%, #b2b9c2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#b0b7c1', GradientType=0);
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #dddddd));
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -o-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #dddddd 100%);
+  background: linear-gradient(to bottom, #f7f7f7 0%, #dddddd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(@colora)', endColorstr='argb(@colorb)', GradientType=0);
   border: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 4px;
-  color: black;
-  font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+  color: #000000;
+  font-family: "Ubuntu Condensed", Ubuntu_condensed;
   font-size: 16px;
   margin: 0;
   padding: 8px 16px;
 }
 .button:not(:disabled):hover {
-  background: #d7dade;
+  background: #eaeaea;
+  color: #000000;
   cursor: pointer;
 }
-.button > span[class^="icon-"] {
+.button > span[class*="icon-"] {
   float: right;
 }
 /* LARGE SCREENS */

@@ -162,8 +162,9 @@
           <ul>
             <li><em>Tous les évènements de l'emploi du temps proviennent de l'IUT de Blois</em></li>
             <li><a href='http://iut-blois.univ-tours.fr/'>Institut Universitaire Technologique de Blois</a></li>
-            <li><a href="mailto:etiennegauvin41@gmail.com"><span class='icon-envelope-alt'></span>Une suggestion ? Une erreur à signaler ?</a></li>
-            <li><a href="https://github.com/etienne-gauvin/edt-iut-blois"><span class='icon-github-alt'></span>Le code source est sur Github</a></li>
+            <li><a href="mailto:etiennegauvin41@gmail.com"><span class='icon-envelope-alt'></span>Contact</a></li>
+            <li><a href="https://github.com/etienne-gauvin/edt-iut-blois"><span class='icon-github-alt'></span>Code source</a></li>
+            <li><a href="/set-background"><span class='icon-wrench'></span>Changer le fond d'écran</a></li>
           </ul>
         </footer>
       </div>

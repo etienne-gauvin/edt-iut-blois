@@ -1,0 +1,61 @@
+/* Couleurs */
+
+//* Couleur principale */
+// @main-color: #A6C7E3;
+// @main-color: #A6C7E3;
+@main-color: #DDD;
+
+//* Couleur de texte principale */
+@text-color: black;
+
+//* Couleur du fond de la page */
+@background-color: #666;
+
+//* Couleur des ombres */
+@shadow-color: rgba(0, 0, 0, 0.6);
+
+//* Couleur du texte du titre de la page */
+@header-text-color: white;
+
+//* Couleur du texte du pied-de-page */
+@footer-text-color: white;
+
+//* Couleurs des boutons */
+@button-text-color: lighten(@text-color, 15%);
+@button-color-b: @main-color;
+@button-color-a: lighten(@button-color-b, 10%);
+@button-text-color-hover: @text-color;
+@button-color-hover: average(@button-color-a, @button-color-b);
+
+//* Couleurs du bouton de choix de groupe */
+@gl-button-text-color: @button-text-color;
+@gl-button-color-b: darken(@button-color-b, 10%);
+@gl-button-color-a: lighten(@gl-button-color-b, 10%);
+@gl-button-text-color-hover: @button-text-color;
+@gl-button-color-hover: average(@gl-button-color-a, @gl-button-color-b);
+
+//* Couleurs de fond des sous-menus dans le menu déroulant */
+@gl-sublist-color: rgba(255, 255, 255, 0.4);
+
+//* Couleur de fond d'un choix survolé dans le menu déroulant */
+@gl-group-color-hover: rgba(255, 255, 255, 0.8);
+
+//* Couleurs d'un choix sélectionné dans le menu déroulant */
+@gl-group-text-color-checked: white;
+@gl-group-color-checked: desaturate(darken(@gl-button-color-b, 15%), 15%);
+
+//* Couleurs du bouton de validation */
+@submit-button-text-color: @button-text-color;
+@submit-button-color-b: saturate(spin(@button-color-b, 40), 10%);
+@submit-button-color-a: lighten(@submit-button-color-b, 10%);
+@submit-button-text-color-hover: @button-text-color;
+@submit-button-color-hover: average(@submit-button-color-a, @submit-button-color-b);
+
+//* Couleurs des jours de l'emploi du temps */
+@edt-text-color: @text-color;
+@edt-text-secondary-color: lighten(@text-color, 30%);
+@edt-color-b: @main-color;
+@edt-color-a: lighten(@edt-color-b, 10%);
+@edt-color-c: darken(@edt-color-b, 5%);
+
+

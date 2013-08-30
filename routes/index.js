@@ -24,3 +24,14 @@ exports.index = function(req, res)
     
     res.render('index', data);
 };
+
+/**
+ * Page de changement de fond d'écran (GET)
+ */
+
+exports.setBackground = function(req, res)
+{
+  res.render('set-background', {
+    backgrounds: fs.readdirSync('public/images/backgrounds') || []
+  });
+};

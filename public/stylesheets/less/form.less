@@ -39,8 +39,16 @@
 
 /* Bouton de validation */
 .submit-container {
-  button {
+  button[type="submit"].button {
+    .gradient(@submit-button-color-a, @submit-button-color-b);
+    color: @submit-button-text-color;
     width: 100%;
+    
+    &:not(:disabled):hover {
+      color: @submit-button-text-color-hover;
+      background: @submit-button-color-hover;
+      cursor: pointer;
+    }
   }
 }
 

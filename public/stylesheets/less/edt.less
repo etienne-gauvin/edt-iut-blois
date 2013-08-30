@@ -3,7 +3,7 @@
 }
 
 .edt-container {
-  color: black;
+  color: @edt-text-color;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -20,21 +20,15 @@
   .day-container {
     .day {
       border-radius: 4px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid @shadow-color;
       overflow: hidden;
       
       h3 {
-        background: -moz-linear-gradient(top,  hsla(0,0%,95%,1) 0%, hsla(215,12%,73%,1) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(0,0%,95%,1)), color-stop(100%,hsla(215,12%,73%,1)));
-        background: -webkit-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-        background: -o-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-        background: -ms-linear-gradient(top,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-        background: linear-gradient(to bottom,  hsla(0,0%,95%,1) 0%,hsla(215,12%,73%,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#b0b7c1',GradientType=0 );
+        .gradient(@edt-color-a, @edt-color-b);
         
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 -1px 1px rgba(255, 255, 255, 0.1) inset;
         color: black;
-        font-family: "Ubuntu Condensed", Ubuntu_condensed, Ubuntu, Arial, sans-serif;
+        font-family: "Ubuntu Condensed", Ubuntu_condensed;
         font-size: 20px;
         font-weight: normal;
         
@@ -43,11 +37,11 @@
       }
       
       .event-list {
-        background: hsl(215,12%,73%);
+        background: @edt-color-b;
         margin: 0;
         
         > :nth-child(even) {
-          background-color: hsl(230,12%,68%); 
+          background-color: @edt-color-c; 
         }
         
         .interlude {
@@ -65,7 +59,7 @@
       }
       
       .details {
-        color: black;
+        color: @edt-text-color;
         text-align: center;
         
         margin: 0 0 4px;
@@ -77,12 +71,12 @@
         }
         
         .startTime {
-          color: #444;
+          color: @edt-text-secondary-color;
           float: left;
         }
 
         .endTime {
-          color: #444;
+          color: @edt-text-secondary-color;
           float: right;
         }
       }
@@ -93,7 +87,7 @@
       
       .teacher {
         display: block;
-        color: #666;
+        color: @edt-text-secondary-color;
         font-family: "Ubuntu Condensed", Ubuntu_condensed;
         font-size: 12px;
         font-style: italic;

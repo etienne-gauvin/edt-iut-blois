@@ -56,6 +56,7 @@ app.configure('development', function(){
  */
 
 app.get('/', indexRoute.index);
+app.get('/set-background', indexRoute.setBackground);
 app.get('/edt/:year/:week/:group.json', edtRoute.edt);
 app.get('/edt/:year/:week/:group/:update.json', edtRoute.edt);
 
