@@ -20,6 +20,7 @@ var app = express();
 
 app.configure(function()
 {
+    process.env.TZ = 'Europe/Paris';
     app.set('port', process.env.PORT || 3443);
     app.set('views', __dirname + '/views');
     app.engine('swig', consolidate.swig);
