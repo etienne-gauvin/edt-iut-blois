@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html manifest="/cache.manifest">
   <head>
     <meta charset="utf-8" />
     <title> Emploi du temps - I.U.T. de Blois </title>
