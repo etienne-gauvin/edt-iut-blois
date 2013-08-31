@@ -92,10 +92,10 @@ $(function()
       updateSubmitButtonText()
       
       var year
-      , week
-      , group = $('[name="group"][value]:checked').val()
-      , date = new Date
-      , update = !!$('[name="update"]:checked').length;
+        , week
+        , group = $('[name="group"][value]:checked').val()
+        , date = new Date
+        , update = !!$('[name="update"]:checked').length;
       
       if ($('#radio-next-week').attr('checked')) {
         console.log('Semaine prochaine.');

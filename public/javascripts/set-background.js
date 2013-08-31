@@ -10,10 +10,12 @@ $(function()
   if (Storage)
   {
     // Sélection du fond actuel
-    if (localStorage.backgroundUrl && localStorage.backgroundUrl[0] === '/')
+    if (typeof localStorage.backgroundUrl === 'string' && localStorage.backgroundUrl[0] === '/')
       $('.image[data-image="' + localStorage.backgroundUrl + '"]').addClass('selected');
     else if (localStorage.backgroundUrl)
       $('[name="background-url"]').addClass('selected').val(localStorage.backgroundUrl);
+    else
+      localStorage.backgroundUrl = "/images/backgrounds/00-default.png";
     
     $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
     
@@ -39,7 +41,7 @@ $(function()
       }
       else {
         $(this).removeClass('selected');
-        localStorage.backgroundUrl = "/images/backgrouds/00-default.png";
+        localStorage.backgroundUrl = "/images/backgrounds/00-default.png";
         $('.image[data-image="' + localStorage.backgroundUrl + '"]').addClass('selected');
       }
     });

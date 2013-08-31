@@ -26,6 +26,8 @@ CACHE MANIFEST
 /font/ubuntu-b-webfont.woff
 /font/ubuntu-r-webfont.woff
 /font/fontawesome-webfont.woff
+/font/fontawesome-webfont.woff?v=3.0.1
+/font//fontawesome-webfont.woff?v=3.2.1
 /font/ubuntu-ri-webfont.woff
 /font/ubuntu-bi-webfont.woff
 
