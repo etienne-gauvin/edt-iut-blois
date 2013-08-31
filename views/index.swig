@@ -31,9 +31,6 @@
     
     <script type="text/javascript" src="/javascripts/zepto.min.js"></script>
     <script type="text/javascript" src="/javascripts/ink.min.js"></script>
-    <script type="text/javascript" src="/javascripts/ink-ui.min.js"></script>
-    <script type="text/javascript" src="/javascripts/autoload.js"></script>
-    <script type="text/javascript" src="/javascripts/html5shiv.js"></script>
     
     <script type="text/javascript">
       // Fond d'écran personnalisé

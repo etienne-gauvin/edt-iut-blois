@@ -12,17 +12,17 @@ var fs = require('fs')
 
 exports.index = function(req, res)
 {
-    // Chargement des groupes
-    var groupsJSON = f.getGroupsJSON();
-    var groups = f.getGroups();
-    
-    // Tableau pour l'affichage des données
-    var data = {
-        groupsJSON: groupsJSON,
-        groups: groups
-    };
-    
-    res.render('index', data);
+  // Chargement des groupes
+  var groupsJSON = f.getGroupsJSON();
+  var groups = f.getGroups();
+
+  // Tableau pour l'affichage des données
+  var data = {
+      groupsJSON: groupsJSON,
+      groups: groups
+  };
+
+  res.render('index', data);
 };
 
 /**
@@ -31,9 +31,19 @@ exports.index = function(req, res)
 
 exports.setBackground = function(req, res)
 {
-  var backgrounds = fs.readdirSync('public/images/backgrounds').sort();
-  
   res.render('set-background', {
-    backgrounds: backgrounds || []
+    backgrounds: fs.readdirSync('public/images/backgrounds').sort() || []
+  });
+};
+
+/**
+ * Fichier Manifest (GET)
+ */
+
+exports.cacheManifest = function(req, res)
+{
+  res.set('Content-Type', 'text/cache-manifest')
+  res.render('cache-manifest', {
+    backgrounds: fs.readdirSync('public/images/backgrounds').sort() || []
   });
 };
