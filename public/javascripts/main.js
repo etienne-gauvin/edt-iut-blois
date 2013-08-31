@@ -1,16 +1,5 @@
 $(function()
 {
-  // Fond d'écran personnalisé
-  if (Storage)
-  {
-    localStorage.backgroundUrl = localStorage.backgroundUrl || "/images/backgrounds/00-default.png";
-    $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
-  }
-  else
-  {
-    $('html').css('background-image', 'url(/images/backgrounds/00-default.png)');
-  }
-  
   // Témoin de chargement 
   Edt.isLoading = false;
   

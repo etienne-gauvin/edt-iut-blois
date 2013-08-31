@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="apple-touch-icon-precomposed" href="/images/touch-icon.57.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/touch-icon.72.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/touch-icon.114.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon-precomposed" href="/images/touch-icon.57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/touch-icon.72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/touch-icon.114.png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 
     <!--
       <PageMap>
@@ -31,6 +34,19 @@
     <script type="text/javascript" src="/javascripts/ink-ui.min.js"></script>
     <script type="text/javascript" src="/javascripts/autoload.js"></script>
     <script type="text/javascript" src="/javascripts/html5shiv.js"></script>
+    
+    <script type="text/javascript">
+      // Fond d'écran personnalisé
+      if (Storage)
+      {
+        localStorage.backgroundUrl = localStorage.backgroundUrl || "/images/backgrounds/00-default.png";
+        $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
+      }
+      else
+      {
+        $('html').css('background-image', 'url(/images/backgrounds/00-default.png)');
+      }
+    </script>
   </head>
   <body>
     <!--[if lt IE 9]>

@@ -27,7 +27,7 @@ app.configure(function()
     app.set('view engine', 'swig');
     app.set('view options', { layout: false });
     app.set('view cache', false);
-    app.use(express.favicon());
+    //app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());

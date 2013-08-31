@@ -46,7 +46,7 @@
         </div>
         <div class="large-80 medium-66 small-100">
           <form class="background-url button">
-            <span class='icon-globe'></span> Saisissez l'URL d'une image : <small class="hide-small">(<i>Entrée</i> pour valider)</small> ou choisissez-en une dans la liste.
+            <span class='icon-globe'></span> Saisissez l'URL d'une image : <small class="hide-small">(<i>Entrée</i> pour valider)</small> ou choisissez-en une dans la liste. 
             <input type="text" placeholder="http://" name="background-url" />
             <input type="submit" class="hide-large" />
           </form>
