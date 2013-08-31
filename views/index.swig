@@ -73,7 +73,7 @@
         
         <!-- Liste des groupes -->
         <div class="group-selection-container large-40 medium-40 small-100">
-          <h2 class="toggle-visibility closed button">Choisir un groupe <span class='icon-caret-down'></span></h2>
+          <h2 class="toggle-visibility closed button">Choisir un groupe <span class='icon-caret-down'></span><span class='clear'></span></h2>
           <fieldset class="hidden">
             {# Affichage de la liste des groupes (macro récursive) #}
             {% macro listGroups _name _group %}
