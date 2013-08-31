@@ -1,15 +1,13 @@
 /* Couleurs */
 /* Corps de la page */
 html {
+  background-color: #666666;
   font-family: Ubuntu, Arial, sans-serif;
   font-size: 14px;
   overflow: scroll;
   overflow-x: hidden;
   overlfow-y: scroll;
   padding-top: 2em;
-}
-body {
-  background-color: #666666;
 }
 /* En-tête */
 .header-container header h1 a,

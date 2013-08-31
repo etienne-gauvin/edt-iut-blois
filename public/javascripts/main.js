@@ -4,11 +4,11 @@ $(function()
   if (Storage)
   {
     localStorage.backgroundUrl = localStorage.backgroundUrl || "/images/backgrounds/00-default.png";
-    $('body').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
+    $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
   }
   else
   {
-    $('body').css('background-image', 'url(/images/backgrounds/00-default.png)');
+    $('html').css('background-image', 'url(/images/backgrounds/00-default.png)');
   }
   
   // Témoin de chargement 

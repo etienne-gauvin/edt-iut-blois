@@ -15,13 +15,12 @@ $(function()
     else if (localStorage.backgroundUrl)
       $('[name="background-url"]').addClass('selected').val(localStorage.backgroundUrl);
     
-    $('body').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
+    $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
     
     $('.image').click(function()
     {
       localStorage.backgroundUrl = $(this).attr('data-image');
-      $('body').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
-      console.log($('body').css('background-image'))
+      $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
       
       $('.selected').removeClass('selected');
       $(this).addClass('selected');
@@ -36,7 +35,7 @@ $(function()
         $('.image.selected').removeClass('selected');
         localStorage.backgroundUrl = $('[name="background-url"]').val()
         $('[name="background-url"]').addClass('selected');
-        $('body').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
+        $('html').css('background-image', 'url(' + localStorage.backgroundUrl + ')');
       }
       else {
         $(this).removeClass('selected');
