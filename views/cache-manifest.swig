@@ -1,5 +1,4 @@
 CACHE MANIFEST
-# v2 2013-08-31
 
 # Ne sont jamais mis à jour
 /set-background

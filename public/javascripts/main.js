@@ -82,6 +82,7 @@ $(function()
   {
     evt.preventDefault();
     $('.error-container .error').empty()
+    $('.edt-container .error').empty()
     
     console.log(Edt.group)
     
