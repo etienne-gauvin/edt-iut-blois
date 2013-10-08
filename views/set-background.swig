@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title> Changer de fond d'écran </title>
     <meta name="viewport" content="width=device-width" />
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="apple-touch-icon-precomposed" href="/images/touch-icon.57.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/touch-icon.72.png">

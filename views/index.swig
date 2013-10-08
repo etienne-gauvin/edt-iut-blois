@@ -47,10 +47,6 @@
     </script>
   </head>
   <body>
-    <!--[if lt IE 9]>
-    <p class="chromeframe">Vous utilisez un navigateur dépassé. <a href="http://browsehappy.com/">Mettez le à jour maintetant</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">installez Google Chrome Frame</a> pour une meilleur expérience sur ce site.</p>
-    <![endif]-->
-    
     <div class="ink-grid">
       <noscript>
         <div class="wrapper nojs-container">

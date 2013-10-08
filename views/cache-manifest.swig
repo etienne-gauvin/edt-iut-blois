@@ -35,4 +35,5 @@ CACHE MANIFEST
 # Mettre à jour si possible
 NETWORK:
 /
+/cache.manifest
 /edt/*

@@ -6,7 +6,7 @@ applications:
       name: node
       info:
         mem: 64M
-        description: Node.js Application
+        description: Emploi du temps des étudiants de l'IUT de Blois
         exec: 
     infra: eu-aws
     url: ${name}.${target-base}
