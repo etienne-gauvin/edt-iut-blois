@@ -98,7 +98,7 @@
         <div class="date-radio-input large-20 medium-33 small-50">
           <label class='button'>
             Cette semaine
-            <input type='radio' name='week' value='0' />
+            <input type='radio' name='week' value='0' checked />
             <span></span>
           </label>
         </div>
@@ -106,7 +106,7 @@
         <div class="date-radio-input large-20 medium-33 small-50">
           <label class='button'>
             La semaine prochaine
-            <input type='radio' name='week' value='1' id='radio-next-week' checked />
+            <input type='radio' name='week' value='1' id='radio-next-week' />
             <span></span>
           </label>
         </div>
@@ -175,6 +175,7 @@
             <li><a href="mailto:etiennegauvin41@gmail.com"><span class='icon-envelope-alt'></span>Contact</a></li>
             <li><a href="https://github.com/etienne-gauvin/edt-iut-blois"><span class='icon-github-alt'></span>Code source</a></li>
             <li><a href="/set-background"><span class='icon-wrench'></span>Changer le fond d'écran</a></li>
+            <li><span class='icon-trash'></span>Effacer <a href="#" class='clear-all'>toutes les données</a> / <a href="#" class='clear-cache'>juste le cache</a></li>
           </ul>
         </footer>
       </div>

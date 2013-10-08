@@ -10,6 +10,24 @@ $(function()
     updateSubmitButtonText()
   }
   
+  // Effacer le cache
+  var clearCache = function() {
+    localStorage.cache = "";
+    window.location.reload();
+  }
+  
+  $('.clear-cache').click(clearCache);
+  
+  // Effacer toutes les données
+  var clearAll = function() {
+    localStorage.cache = "";
+    localStorage.backgroundUrl = "";
+    localStorage.group = "";
+    window.location.reload();
+  }
+  
+  $('.clear-all').click(clearAll);
+  
   // Mettre à jour le groupe affiché dans la barre
   // En fonction du groupe enregistré dans Edt.group
   function updateGroupDisplay()
@@ -144,7 +162,7 @@ $(function()
       , week
       , group = $('[name="group"][value]:checked').val()
       , date = new Date(Edt.date.getTime() + 7 * 24 * 60 * 60 * 1000 * parseInt($(this).attr('data-week')))
-      , update = !!$('[name="update"]:checked').length;
+      , update = false; // (bug) !!$('[name="update"]:checked').length;
       
       if (update)
         console.log("Demande de mise à jour.");
