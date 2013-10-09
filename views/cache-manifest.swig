@@ -1,7 +1,13 @@
 CACHE MANIFEST
 # version du 9 oct. 2013
 
-# Ne sont jamais mis à jour
+# Mettre à jour si possible
+NETWORK:
+/
+/cache.manifest
+/edt/*
+
+# Autres
 /set-background
 
 ## Feuilles de style
@@ -33,8 +39,3 @@ CACHE MANIFEST
 /font/ubuntu-bi-webfont.woff
 
 
-# Mettre à jour si possible
-NETWORK:
-/
-/cache.manifest
-/edt/*

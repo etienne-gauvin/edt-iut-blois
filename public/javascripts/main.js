@@ -361,6 +361,7 @@ function showLocalEdTs()
     for (var i in cache)
     {
       var edt = cache[i];
+      console.log(i)
       console.log(edt.year + '/' + edt.week + ' groupe ' + edt.group);
     }
   }
