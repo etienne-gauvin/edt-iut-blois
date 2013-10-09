@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Emploi du temps - IUT de Blois
 ==============================
 
@@ -30,3 +31,8 @@ Le tout est concocté en HTML5 et CSS3, avec JavaScript côté serveur et côté
 - Ink (http://ink.sapo.pt/) ;
 
 - Font Awesome (http://fortawesome.github.com/Font-Awesome/).
+=======
+The OpenShift `nodejs` cartridge documentation can be found at:
+
+https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-nodejs/README.md
+>>>>>>> 77aca5145f213c9a4ea3dc8335b52d49fdae28a2
