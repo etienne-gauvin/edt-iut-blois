@@ -14,7 +14,7 @@ Un navigateur récent est requis.
 Testé sans problème avec Chrome et Firefox,
 ainsi que sur Firefox pour Android.
 
-_Voir en ligne sur http://edtb.eu01.aws.af.cm/_
+~~_Voir en ligne sur http://edtb.eu01.aws.af.cm/_~~
 
 Fonctionnement
 --------------
